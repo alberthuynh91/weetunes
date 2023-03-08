@@ -1,0 +1,25 @@
+:root {
+  --clr-primary-200: #F3EED9;
+  --clr-primary-400: #824936;
+  --clr-neutral-100: #FFF;
+  --clr-neutral-900: #222C2A;
+
+  --ff-primary: "Roboto", sans-serif;
+  --ff-accent: "Playfair Display", serif;
+
+  --small-spacing: 0.5rem;
+	--large-spacing: 1rem;
+	--large-font-size: 2rem;
+  --med-font-size: 1rem;
+
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+}
+
+@media (min-width: 576px) {
+	:root {
+		--small-spacing: 1rem;
+		--large-spacing: 2rem;
+		--large-font-size: 3rem;
+    --med-font-size: 2rem;
+	}
+}

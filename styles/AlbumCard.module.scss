@@ -1,0 +1,21 @@
+.horizontal {
+  border: 1px solid #f0f0f0;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  .left {
+    display: flex;
+    margin-right: 1.25rem;
+    align-items: center;
+  }
+
+  .right {
+    flex-direction: column;
+  }
+}
+
+.horizontal:hover {
+  cursor: pointer;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}

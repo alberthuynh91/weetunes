@@ -7,14 +7,18 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.0.1",
+    "antd": "^5.3.0",
     "next": "latest",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "sass": "^1.58.3"
   },
   "devDependencies": {
     "@types/node": "^12.12.21",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
+    "postcss-preset-env": "^8.0.1",
     "typescript": "^4.8.3"
   }
 }
