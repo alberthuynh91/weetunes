@@ -11,7 +11,7 @@ const Header = (props: HeaderProps) => {
   return (
     <header className={styles.header}>
       <h1>WeeTunes</h1>
-      <h3>Browse the top trending music at WeeCare!</h3>
+      <h2>Browse the top trending music at WeeCare!</h2>
       <div className={styles.searchContainer}>
         <Input.Search
           type="text"
