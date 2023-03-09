@@ -3,6 +3,7 @@ import Layout from '../components/Layout';
 import Header from '../components/Header';
 import Body from '../components/Body';
 import { searchData } from '../utils/search-data';
+import styles from '../styles/index.module.scss';
 
 const IndexPage = () => {
   const [data, setData] = useState([]);
@@ -37,13 +38,15 @@ const IndexPage = () => {
 
   return (
     <Layout title="WeeTunes - Home">
-      <Header handleSearch={handleSearch} />
-      <Body
-        isLoading={isLoading}
-        filteredData={filteredData}
-        setFilteredData={setFilteredData}
-        data={data}
-      />
+      <div className={styles.main}>
+        <Header handleSearch={handleSearch} />
+        <Body
+          isLoading={isLoading}
+          filteredData={filteredData}
+          setFilteredData={setFilteredData}
+          data={data}
+        />
+      </div>
     </Layout>
   );
 };
