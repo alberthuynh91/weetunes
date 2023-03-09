@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { Card } from 'antd';
 import AlbumModal from './AlbumModal';
-import { Image, Artist, Title, Name, Album as AlbumType } from '../interfaces';
+import { MOBILE_BREAKPOINT } from '../constants';
+import {
+  Image as ImageType,
+  Artist,
+  Title,
+  Name,
+  Album as AlbumType,
+} from '../interfaces';
 import useWindowDimensions from '../utils/useWindowDimension';
 import styles from '../styles/AlbumCard.module.scss';
 
 type HorizontalAlbumCardProps = {
-  image: Image[];
+  image: ImageType[];
   artist: Artist;
   title: Title;
   name: Name;
@@ -19,7 +27,13 @@ const HorizontalAlbumCard = (props: HorizontalAlbumCardProps) => {
     <>
       <div onClick={handleClick} className={styles.horizontal}>
         <div className={styles.left}>
-          <img alt={title.label} src={image[2].label} />
+          <Image
+            src={image[2].label}
+            alt={title.label}
+            width={75}
+            height={75}
+            layout="instrinsic"
+          />
         </div>
         <div className={styles.right}>
           <h4>{name.label}</h4>
@@ -33,7 +47,7 @@ const HorizontalAlbumCard = (props: HorizontalAlbumCardProps) => {
 const AlbumCard = (props: AlbumType) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { width } = useWindowDimensions();
-  const isMobile = width <= 768;
+  const isMobile = width <= MOBILE_BREAKPOINT;
 
   const {
     image,
@@ -64,10 +78,26 @@ const AlbumCard = (props: AlbumType) => {
       ) : (
         <Card
           hoverable
-          cover={<img alt={title.label} src={image[2].label} />}
+          cover={
+            <Image
+              src={image[2].label}
+              alt={title.label}
+              width={170}
+              height={170}
+              layout="responsive"
+            />
+          }
           onClick={handleClick}
         >
-          <Card.Meta title={name.label} description={artist.label} />
+          <Card.Meta
+            title={name.label}
+            description={artist.label}
+            style={{
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+            }}
+          />
         </Card>
       )}
       <AlbumModal

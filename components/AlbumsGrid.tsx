@@ -2,7 +2,6 @@ import React from 'react';
 import { Row, Col } from 'antd';
 import AlbumCard from './AlbumCard';
 import { Album as AlbumType } from '../interfaces';
-import { getColSpan } from '../utils/grid-layout';
 import { MOBILE_BREAKPOINT } from '../constants';
 import useWindowDimensions from '../utils/useWindowDimension';
 
@@ -14,9 +13,8 @@ type AlbumsGridProps = {
 const AlbumsGrid = (props: AlbumsGridProps) => {
   const { data, isLoading } = props;
   const { width } = useWindowDimensions();
-  const colSpan = getColSpan(width);
   return (
-    <Row gutter={width > MOBILE_BREAKPOINT ? [8, 8] : [0, 0]}>
+    <Row gutter={{ xs: 4, sm: 6, md: 8, lg: 8, xl: 8 }}>
       {data.map((item) => {
         const albumCardProps = {
           id: item?.id,
@@ -31,16 +29,15 @@ const AlbumsGrid = (props: AlbumsGridProps) => {
           category: item['category'],
           isLoading: isLoading,
         };
-        if (width <= MOBILE_BREAKPOINT) {
-          return (
-            <AlbumCard
-              key={item?.id?.attributes['im:id']}
-              {...albumCardProps}
-            />
-          );
-        }
         return (
-          <Col key={item?.id?.attributes['im:id']} span={colSpan}>
+          <Col
+            key={item?.id?.attributes['im:id']}
+            xs={24}
+            sm={8}
+            md={6}
+            lg={4}
+            xl={3}
+          >
             <AlbumCard {...albumCardProps} />
           </Col>
         );
