@@ -5,7 +5,7 @@
   background-size: cover;
   text-align: center;
   background-repeat: no-repeat; 
-  padding: 6.25rem 0rem;
+  padding: 6.25rem 0;
   color: white;
   display: flex;
   flex-direction: column;
@@ -22,13 +22,13 @@
 
   h2 {
     font-size: var(--med-font-size);
-    padding: 0rem var(--xs-spacing);
+    padding: 0 var(--xs-spacing);
   }
 
   @media screen and (max-width: 768px) {
     .searchContainer {
-      width: 80%;
+      width: 75%;
     }
-    padding: 2.25rem 0rem;
+    padding: 2.25rem 0;
   }
 }

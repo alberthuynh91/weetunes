@@ -9,12 +9,6 @@
 
   .left {
     margin-right: var(--sm-spacing);
-
-    @media screen and (max-width: 576px) {
-      img {
-        width: 7.5rem;
-      }
-    }
   }
 }
 
