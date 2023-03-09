@@ -13,9 +13,8 @@ const AlbumsGrid = (props: AlbumsGridProps) => {
   const { data, isLoading } = props;
   const { width } = useWindowDimensions();
   const colSpan = width > 992 ? 6 : 8;
-
   return (
-    <Row gutter={[8, 8]}>
+    <Row gutter={width > 768 ? [8, 8] : [0, 0]}>
       {data.map((item) => {
         const albumCardProps = {
           id: item?.id,

@@ -11,8 +11,6 @@ const IndexPage = () => {
   const [filteredData, setFilteredData] = useState(undefined);
   const [isLoading, setLoading] = useState(false);
 
-  console.log(`what is width and height of page: `, width, height);
-
   const handleSearch = (searchValue: string) => {
     if (searchValue === '') {
       // Clear button in search bar pressed
@@ -33,7 +31,6 @@ const IndexPage = () => {
     fetch('https://itunes.apple.com/us/rss/topalbums/limit=100/json')
       .then((res) => res.json())
       .then((res) => {
-        console.log(`what is res in fetch: `, res);
         const data = res?.feed?.entry || [];
         setData(data);
         setLoading(false);

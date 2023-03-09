@@ -17,16 +17,19 @@
 
   h1 {
     line-height: 1;
-    font-size: var(--large-font-size);
+    font-size: var(--lg-font-size);
   }
 
   h3 {
     font-size: var(--med-font-size);
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 768px) {
     .searchContainer {
       width: 80%;
     }
+
+
+    padding: 2.25rem 0rem;
   }
 }

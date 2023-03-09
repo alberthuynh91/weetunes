@@ -73,6 +73,7 @@ const AlbumCard = (props: AlbumType) => {
       <AlbumModal
         artist={artist}
         title={title}
+        name={name}
         category={category}
         releaseDate={releaseDate}
         price={price}

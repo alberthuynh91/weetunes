@@ -1,18 +1,39 @@
+.horizontal:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+
+}
+
 .horizontal {
   border: 1px solid #f0f0f0;
   border-radius: 0.5rem;
   display: flex;
   flex-direction: row;
   width: 100%;
+
   .left {
     display: flex;
-    margin-right: 1.25rem;
+    margin: 0rem 0.5rem;
     align-items: center;
+
+    @media screen and (max-width: 768px) {
+      img {
+        width: 75px;
+      }
+    }
   }
 
   .right {
     flex-direction: column;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    h4, p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
+
 }
 
 .horizontal:hover {

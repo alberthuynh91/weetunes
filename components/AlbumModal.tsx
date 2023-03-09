@@ -9,6 +9,7 @@ import {
   ReleaseDate,
   Category,
   Price,
+  Name,
 } from '../interfaces';
 import styles from '../styles/AlbumModal.module.scss';
 
@@ -20,6 +21,7 @@ type AlbumModalProps = {
   link: Link;
   releaseDate: ReleaseDate;
   title: Title;
+  name: Name;
   category: Category;
   isModalOpen: boolean;
   setIsModalOpen: (boolean) => void;
@@ -34,6 +36,7 @@ const AlbumModal = (props: AlbumModalProps) => {
     link,
     releaseDate,
     title,
+    name,
     category,
     isModalOpen,
     setIsModalOpen,
@@ -69,7 +72,7 @@ const AlbumModal = (props: AlbumModalProps) => {
         </div>
         <div className={styles.right}>
           <p>
-            <b>Album Title:</b> {title.label}
+            <b>Album:</b> {name.label}
           </p>
           <p>
             <b>Genre:</b> {category.attributes.label}
