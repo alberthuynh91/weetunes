@@ -3,10 +3,8 @@ import Layout from '../components/Layout';
 import Header from '../components/Header';
 import Body from '../components/Body';
 import { searchData } from '../utils/search-data';
-import useWindowDimensions from '../utils/useWindowDimension';
 
 const IndexPage = () => {
-  const { width, height } = useWindowDimensions();
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState(undefined);
   const [isLoading, setLoading] = useState(false);

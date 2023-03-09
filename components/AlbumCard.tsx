@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { Card } from 'antd';
-import AlbumModal from './AlbumModal';
+import dynamic from 'next/dynamic';
+// import AlbumModal from './AlbumModal';
 import { MOBILE_BREAKPOINT } from '../constants';
 import {
   Image as ImageType,
@@ -12,6 +13,8 @@ import {
 } from '../interfaces';
 import useWindowDimensions from '../utils/useWindowDimension';
 import styles from '../styles/AlbumCard.module.scss';
+
+const AlbumModal = dynamic(() => import('./AlbumModal'));
 
 type HorizontalAlbumCardProps = {
   image: ImageType[];
