@@ -88,7 +88,6 @@ const AlbumCard = (props: AlbumType) => {
               width={170}
               height={170}
               style={{ height: 'auto' }}
-              unoptimized={true}
               loader={customLoader}
             />
           }

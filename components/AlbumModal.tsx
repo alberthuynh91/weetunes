@@ -76,7 +76,6 @@ const AlbumModal = (props: AlbumModalProps) => {
             width={170}
             height={170}
             style={{ height: 'auto' }}
-            unoptimized={true}
             loader={customLoader}
           />
         </div>
