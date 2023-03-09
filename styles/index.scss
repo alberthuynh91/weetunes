@@ -9,6 +9,7 @@
 	--desktop-sm-breakpoint: 992px;
 	--desktop-lg-breakpoint: 1200px;
 
+  --xs-spacing: 0.25rem;
   --sm-spacing: 0.5rem;
 	--lg-spacing: 1rem;
 	--lg-font-size: 2rem;
@@ -20,6 +21,7 @@
 
 @media (min-width: 576px) {
 	:root {
+    --xs-spacing: 0.5rem;
 		--sm-spacing: 1rem;
 		--lg-spacing: 2rem;
 		--lg-font-size: 4rem;

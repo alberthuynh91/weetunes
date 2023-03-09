@@ -2,6 +2,8 @@ import React from 'react';
 import { Row, Col } from 'antd';
 import AlbumCard from './AlbumCard';
 import { Album as AlbumType } from '../interfaces';
+import { MOBILE_BREAKPOINT } from '../constants';
+import useWindowDimensions from '../utils/useWindowDimension';
 
 type AlbumsGridProps = {
   data: AlbumType[];
@@ -10,8 +12,11 @@ type AlbumsGridProps = {
 
 const AlbumsGrid = (props: AlbumsGridProps) => {
   const { data, isLoading } = props;
+  const { width } = useWindowDimensions();
+  const isMobile = width <= MOBILE_BREAKPOINT;
+
   return (
-    <Row gutter={{ xs: 4, sm: 6, md: 8, lg: 8, xl: 8 }}>
+    <Row gutter={isMobile ? [2, 2] : [8, 8]}>
       {data.map((item) => {
         const albumCardProps = {
           id: item?.id,

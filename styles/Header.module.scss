@@ -22,7 +22,7 @@
 
   h2 {
     font-size: var(--med-font-size);
-    padding: 0rem 0.5rem;
+    padding: 0rem var(--xs-spacing);
   }
 
   @media screen and (max-width: 768px) {

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { Card } from 'antd';
 import dynamic from 'next/dynamic';
-// import AlbumModal from './AlbumModal';
 import { MOBILE_BREAKPOINT } from '../constants';
 import {
   Image as ImageType,
