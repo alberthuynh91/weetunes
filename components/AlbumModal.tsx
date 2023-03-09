@@ -1,7 +1,8 @@
 import React from 'react';
 import { Modal } from 'antd';
+import Image from 'next/image';
 import {
-  Image,
+  Image as ImageType,
   Artist,
   Title,
   Rights,
@@ -11,10 +12,11 @@ import {
   Price,
   Name,
 } from '../interfaces';
+import { customLoader } from '../utils/custom-image-loader';
 import styles from '../styles/AlbumModal.module.scss';
 
 type AlbumModalProps = {
-  image: Image[];
+  image: ImageType[];
   artist: Artist;
   price: Price;
   rights: Rights;
@@ -68,7 +70,15 @@ const AlbumModal = (props: AlbumModalProps) => {
     >
       <div className={styles.modalContainer}>
         <div className={styles.left}>
-          <img alt={title.label} src={image[image.length - 1].label} />
+          <Image
+            src={image[image.length - 1].label}
+            alt={title.label}
+            width={170}
+            height={170}
+            style={{ height: 'auto' }}
+            unoptimized={true}
+            loader={customLoader}
+          />
         </div>
         <div className={styles.right}>
           <p>

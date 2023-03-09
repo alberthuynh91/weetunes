@@ -11,12 +11,13 @@ import {
   Album as AlbumType,
 } from '../interfaces';
 import useWindowDimensions from '../utils/useWindowDimension';
+import { customLoader } from '../utils/custom-image-loader';
 import styles from '../styles/AlbumCard.module.scss';
 
 const AlbumModal = dynamic(() => import('./AlbumModal'));
 
 type HorizontalAlbumCardProps = {
-  image: ImageType[];
+  image: ImageType;
   artist: Artist;
   title: Title;
   name: Name;
@@ -30,11 +31,12 @@ const HorizontalAlbumCard = (props: HorizontalAlbumCardProps) => {
       <div onClick={handleClick} className={styles.horizontal}>
         <div className={styles.left}>
           <Image
-            src={image[2].label}
+            src={image.label}
             alt={title.label}
             width={75}
             height={75}
             style={{ height: 'auto' }}
+            loader={customLoader}
           />
         </div>
         <div className={styles.right}>
@@ -47,10 +49,6 @@ const HorizontalAlbumCard = (props: HorizontalAlbumCardProps) => {
 };
 
 const AlbumCard = (props: AlbumType) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const { width } = useWindowDimensions();
-  const isMobile = width <= MOBILE_BREAKPOINT;
-
   const {
     image,
     artist,
@@ -62,6 +60,9 @@ const AlbumCard = (props: AlbumType) => {
     name,
     category,
   } = props;
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { width } = useWindowDimensions();
+  const isMobile = width <= MOBILE_BREAKPOINT;
 
   const handleClick = () => {
     setIsModalOpen(true);
@@ -71,7 +72,7 @@ const AlbumCard = (props: AlbumType) => {
     <>
       {isMobile ? (
         <HorizontalAlbumCard
-          image={image}
+          image={image[image.length - 1]}
           artist={artist}
           title={title}
           name={name}
@@ -82,11 +83,13 @@ const AlbumCard = (props: AlbumType) => {
           hoverable
           cover={
             <Image
-              src={image[2].label}
+              src={image[image.length - 1].label}
               alt={title.label}
               width={170}
               height={170}
               style={{ height: 'auto' }}
+              unoptimized={true}
+              loader={customLoader}
             />
           }
           onClick={handleClick}
