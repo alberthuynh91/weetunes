@@ -34,7 +34,7 @@ const HorizontalAlbumCard = (props: HorizontalAlbumCardProps) => {
             alt={title.label}
             width={75}
             height={75}
-            layout="instrinsic"
+            style={{ height: 'auto' }}
           />
         </div>
         <div className={styles.right}>
@@ -86,7 +86,7 @@ const AlbumCard = (props: AlbumType) => {
               alt={title.label}
               width={170}
               height={170}
-              layout="responsive"
+              style={{ height: 'auto' }}
             />
           }
           onClick={handleClick}
