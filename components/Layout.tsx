@@ -9,7 +9,7 @@ type Props = {
 
 const roboto = Roboto({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['300', '400', '700'],
 });
 
 const Layout = ({ children, title = 'WeeTunes' }: Props) => (
