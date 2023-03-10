@@ -10,7 +10,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: rgb(70,136,71);
 
   .searchContainer {
     width: 50%;
@@ -19,11 +18,19 @@
   h1 {
     line-height: 1;
     font-size: var(--lg-font-size);
+    color: rgb(70,136,71);
+    transition: transform 250ms;
   }
 
   h2 {
     font-size: var(--med-font-size);
     padding: 0 var(--xs-spacing);
+    color: rgb(70,136,71);
+    transition: transform 250ms;
+  }
+  
+  h1:hover, h2:hover {
+    transform: translateY(-20px);
   }
 
   @media screen and (max-width: 768px) {

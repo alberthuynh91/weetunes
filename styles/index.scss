@@ -1,17 +1,11 @@
 :root {
-  --clr-primary-200: #F3EED9;
   --clr-primary-400: #FFCC01;
-  --clr-neutral-100: #FFF;
-  --clr-neutral-900: #222C2A;
-
   --xs-spacing: 0.25rem;
   --sm-spacing: 0.5rem;
 	--lg-spacing: 1rem;
 	--lg-font-size: 4rem;
   --med-font-size: 1rem;
   --sm-font-size: 0.875rem;
-
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
 }
 
 @media (min-width: 576px) {

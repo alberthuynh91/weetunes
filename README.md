@@ -1,6 +1,6 @@
 # WeeTunes
 
-Simple project built using React, Next.js, TypeScript, SASS and [Ant Design](https://ant.design/) leveraging [Apple music API](https://itunes.apple.com/us/rss/topalbums/limit=100/json) for top 100 albums
+Simple project built using React, Next.js, TypeScript, SASS and [Ant Design](https://ant.design/) leveraging [Apple music API](https://itunes.apple.com/us/rss/topalbums/limit=100/json) for top 100 album data.
 
 ## Setup
 
@@ -16,6 +16,6 @@ npm install
 npm run dev
 ```
 
-Project is also hosted using Netlify at: https://bert-weetunes.netlify.app/
+Project is also deployed at https://bert-weetunes.netlify.app/ using Netlify
 
 ## Notes

@@ -1,13 +1,19 @@
 import React, { ReactNode } from 'react';
 import Head from 'next/head';
+import { Roboto } from '@next/font/google';
 
 type Props = {
   children?: ReactNode;
   title?: string;
 };
 
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+});
+
 const Layout = ({ children, title = 'WeeTunes' }: Props) => (
-  <div>
+  <div className={roboto.className}>
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
