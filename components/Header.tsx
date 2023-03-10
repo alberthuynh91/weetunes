@@ -3,7 +3,7 @@ import { Input } from 'antd';
 import styles from '../styles/Header.module.scss';
 
 type HeaderProps = {
-  handleSearch: (string) => void;
+  handleSearch: (string: string) => void;
 };
 
 const Header = (props: HeaderProps) => {
