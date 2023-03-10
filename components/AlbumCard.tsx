@@ -81,6 +81,7 @@ const AlbumCard = (props: AlbumType) => {
 
   const imageDimensions =
     parseInt(image[image.length - 1]?.attributes?.height) || 170;
+
   return (
     <>
       {isMobile ? (
