@@ -5,7 +5,7 @@
   background-size: cover;
   text-align: center;
   background-repeat: no-repeat; 
-  padding: 6.25rem 0;
+  padding: 5.25rem 0;
   color: white;
   display: flex;
   flex-direction: column;
@@ -28,15 +28,16 @@
     color: rgb(70,136,71);
     transition: transform 250ms;
   }
-  
+
   h1:hover, h2:hover {
-    transform: translateY(-20px);
+    transform: translateY(-1.25rem);
   }
 
   @media screen and (max-width: 768px) {
+    padding: 0.25rem 0 2.25rem 0;
+
     .searchContainer {
       width: 75%;
     }
-    padding: 2.25rem 0;
   }
 }

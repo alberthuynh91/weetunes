@@ -13,7 +13,7 @@ type AlbumsGridProps = {
 const AlbumsGrid = (props: AlbumsGridProps) => {
   const { data, isLoading } = props;
   const { width } = useWindowDimensions();
-  const isMobile = width <= MOBILE_BREAKPOINT;
+  const isMobile = width < MOBILE_BREAKPOINT;
 
   return (
     <Row gutter={isMobile ? [2, 2] : [8, 8]}>
@@ -35,7 +35,7 @@ const AlbumsGrid = (props: AlbumsGridProps) => {
           <Col
             key={item?.id?.attributes['im:id']}
             xs={24}
-            sm={8}
+            sm={6}
             md={6}
             lg={4}
             xl={3}

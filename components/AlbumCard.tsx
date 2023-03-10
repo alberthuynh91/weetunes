@@ -67,7 +67,7 @@ const AlbumCard = (props: AlbumType) => {
   } = props;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { width } = useWindowDimensions();
-  const isMobile = width <= MOBILE_BREAKPOINT;
+  const isMobile = width < MOBILE_BREAKPOINT;
 
   const handleClick = () => {
     setIsModalOpen(true);

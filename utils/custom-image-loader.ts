@@ -1,4 +1,4 @@
-export const customLoader = (props) => {
+export const customLoader = (props): string => {
   const { src, width } = props;
   let newSrc = src.split('/');
   newSrc[newSrc.length - 1] = `${width}x${width}bb.webp`;
