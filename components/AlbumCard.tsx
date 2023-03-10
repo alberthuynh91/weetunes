@@ -45,10 +45,10 @@ const HorizontalAlbumCard = (props: HorizontalAlbumCardProps) => {
           loader={customLoader}
         />
       </div>
-      <div className={styles.right}>
-        <h4>{name.label}</h4>
+      <article className={styles.right}>
+        <h1 className={styles.title}>{name.label}</h1>
         <p>{artist.label}</p>
-      </div>
+      </article>
     </div>
   );
 };
@@ -79,6 +79,8 @@ const AlbumCard = (props: AlbumType) => {
     }
   };
 
+  const imageDimensions =
+    parseInt(image[image.length - 1]?.attributes?.height) || 170;
   return (
     <>
       {isMobile ? (
@@ -99,8 +101,8 @@ const AlbumCard = (props: AlbumType) => {
             <Image
               src={image[image.length - 1].label}
               alt={title.label}
-              width={170}
-              height={170}
+              width={imageDimensions}
+              height={imageDimensions}
               style={{ height: 'auto' }}
               loader={customLoader}
             />
