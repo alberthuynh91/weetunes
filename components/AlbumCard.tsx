@@ -21,30 +21,35 @@ type HorizontalAlbumCardProps = {
   artist: Artist;
   title: Title;
   name: Name;
-  handleClick: () => void;
+  onClick: () => void;
+  onKeyDown: (e: React.KeyboardEvent) => void;
 };
 
 const HorizontalAlbumCard = (props: HorizontalAlbumCardProps) => {
-  const { image, artist, title, name, handleClick } = props;
+  const { onKeyDown, image, artist, title, name, onClick } = props;
   return (
-    <>
-      <div onClick={handleClick} className={styles.horizontal}>
-        <div className={styles.left}>
-          <Image
-            src={image.label}
-            alt={title.label}
-            width={75}
-            height={75}
-            style={{ height: 'auto' }}
-            loader={customLoader}
-          />
-        </div>
-        <div className={styles.right}>
-          <h4>{name.label}</h4>
-          <p>{artist.label}</p>
-        </div>
+    <div
+      role="button"
+      tabIndex={0}
+      onClick={onClick}
+      onKeyDown={onKeyDown}
+      className={styles.horizontal}
+    >
+      <div className={styles.left}>
+        <Image
+          src={image.label}
+          alt={title.label}
+          width={75}
+          height={75}
+          style={{ height: 'auto' }}
+          loader={customLoader}
+        />
       </div>
-    </>
+      <div className={styles.right}>
+        <h4>{name.label}</h4>
+        <p>{artist.label}</p>
+      </div>
+    </div>
   );
 };
 
@@ -68,6 +73,12 @@ const AlbumCard = (props: AlbumType) => {
     setIsModalOpen(true);
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      setIsModalOpen(true);
+    }
+  };
+
   return (
     <>
       {isMobile ? (
@@ -76,10 +87,13 @@ const AlbumCard = (props: AlbumType) => {
           artist={artist}
           title={title}
           name={name}
-          handleClick={handleClick}
+          onClick={handleClick}
+          onKeyDown={handleKeyDown}
         />
       ) : (
         <Card
+          role="button"
+          tabIndex={0}
           hoverable
           cover={
             <Image
@@ -92,6 +106,7 @@ const AlbumCard = (props: AlbumType) => {
             />
           }
           onClick={handleClick}
+          onKeyDown={handleKeyDown}
         >
           <Card.Meta
             title={name.label}

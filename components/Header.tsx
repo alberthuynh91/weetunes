@@ -14,6 +14,7 @@ const Header = (props: HeaderProps) => {
       <h2>Browse the top trending music at WeeCare!</h2>
       <div className={styles.searchContainer}>
         <Input.Search
+          aria-label="Search for album or artist"
           type="text"
           allowClear
           placeholder="Search for album or artist"

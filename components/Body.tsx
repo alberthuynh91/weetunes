@@ -17,7 +17,7 @@ const Body = (props: BodyProps) => {
   if (isLoading) return <Skeleton active />;
 
   return (
-    <div className={styles.body}>
+    <main className={styles.body}>
       {filteredData?.length === 0 ? (
         <div className={styles.empty}>
           <Empty description={false} />
@@ -32,7 +32,7 @@ const Body = (props: BodyProps) => {
           isLoading={isLoading}
         />
       )}
-    </div>
+    </main>
   );
 };
 
