@@ -66,6 +66,7 @@ const AlbumCard = (props: AlbumType) => {
     category,
   } = props;
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [error, setError] = useState(false);
   const { width } = useWindowDimensions();
   const isMobile = width < MOBILE_BREAKPOINT;
 
@@ -105,7 +106,8 @@ const AlbumCard = (props: AlbumType) => {
               width={imageDimensions}
               height={imageDimensions}
               style={{ height: 'auto' }}
-              loader={customLoader}
+              loader={!error && customLoader}
+              onError={() => setError(true)}
             />
           }
           onClick={handleClick}
