@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Modal } from 'antd';
 import Image from 'next/image';
 import {
@@ -26,10 +26,12 @@ type AlbumModalProps = {
   name: Name;
   category: Category;
   isModalOpen: boolean;
-  setIsModalOpen: (boolean) => void;
+  setIsModalOpen: (bool: boolean) => void;
 };
 
 const AlbumModal = (props: AlbumModalProps) => {
+  const [error, setError] = useState(false);
+
   const {
     image,
     artist,
@@ -52,6 +54,9 @@ const AlbumModal = (props: AlbumModalProps) => {
     setIsModalOpen(false);
   };
 
+  const imageDimensions =
+    parseInt(image[image.length - 1]?.attributes?.height) || 170;
+
   return (
     <Modal
       width={650}
@@ -73,10 +78,11 @@ const AlbumModal = (props: AlbumModalProps) => {
           <Image
             src={image[image.length - 1].label}
             alt={title.label}
-            width={170}
-            height={170}
+            width={imageDimensions}
+            height={imageDimensions}
             style={{ height: 'auto' }}
-            loader={customLoader}
+            loader={!error && customLoader}
+            onError={() => setError(true)}
           />
         </div>
         <div className={styles.right}>

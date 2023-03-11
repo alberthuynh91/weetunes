@@ -7,7 +7,7 @@ import styles from '../styles/Body.module.scss';
 type BodyProps = {
   isLoading: boolean;
   filteredData: Album[];
-  setFilteredData: (any) => void;
+  setFilteredData: (data: undefined | [] | Album[]) => void;
   data: Album[];
 };
 
