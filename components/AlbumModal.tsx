@@ -74,7 +74,7 @@ const AlbumModal = (props: AlbumModalProps) => {
       cancelText="Close"
     >
       <div className={styles.modalContainer}>
-        <div className={styles.left}>
+        <div className={styles.media}>
           <Image
             src={image[image.length - 1].label}
             alt={title.label}
@@ -85,7 +85,7 @@ const AlbumModal = (props: AlbumModalProps) => {
             onError={() => setError(true)}
           />
         </div>
-        <div className={styles.right}>
+        <div className={styles.content}>
           <p>
             <b>Album:</b> {name.label}
           </p>

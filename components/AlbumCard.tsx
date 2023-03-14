@@ -28,14 +28,14 @@ type HorizontalAlbumCardProps = {
 const HorizontalAlbumCard = (props: HorizontalAlbumCardProps) => {
   const { onKeyDown, image, artist, title, name, onClick } = props;
   return (
-    <div
+    <article
       role="button"
       tabIndex={0}
       onClick={onClick}
       onKeyDown={onKeyDown}
       className={styles.horizontal}
     >
-      <div className={styles.left}>
+      <div className={styles.media}>
         <Image
           src={image.label}
           alt={title.label}
@@ -45,11 +45,11 @@ const HorizontalAlbumCard = (props: HorizontalAlbumCardProps) => {
           loader={customLoader}
         />
       </div>
-      <article className={styles.right}>
-        <h1 className={styles.title}>{name.label}</h1>
-        <p>{artist.label}</p>
-      </article>
-    </div>
+      <div className={styles.content}>
+        <span className={styles.title}>{name.label}</span>
+        <span>{artist.label}</span>
+      </div>
+    </article>
   );
 };
 

@@ -5,15 +5,16 @@
   width: 100%;
   transition: box-shadow 0.2s, border-color 0.2s;
 
-  .left {
+  .media {
     display: flex;
-    margin: 0 var(--sm-spacing);
+    margin: var(--sm-spacing);
     align-items: center;
   }
 
-  .right {
+  .content {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -25,6 +26,7 @@
 
   .title {
     font-size: var(--med-font-size);
+    font-weight: 700;
   }
 
 }
