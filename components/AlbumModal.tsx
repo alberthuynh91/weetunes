@@ -46,11 +46,7 @@ const AlbumModal = (props: AlbumModalProps) => {
     setIsModalOpen,
   } = props;
 
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleCancel = () => {
+  const handleModalClose = () => {
     setIsModalOpen(false);
   };
 
@@ -63,14 +59,14 @@ const AlbumModal = (props: AlbumModalProps) => {
       centered
       title={artist.label}
       open={isModalOpen}
-      onOk={handleOk}
+      onOk={handleModalClose}
       okButtonProps={{
         danger: true,
         target: '_blank',
         href: link?.attributes?.href || 'https://music.apple.com/',
       }}
       okText="Open in Apple Music"
-      onCancel={handleCancel}
+      onCancel={handleModalClose}
       cancelText="Close"
     >
       <div className={styles.modalContainer}>
@@ -86,21 +82,23 @@ const AlbumModal = (props: AlbumModalProps) => {
           />
         </div>
         <div className={styles.content}>
-          <p>
-            <b>Album:</b> {name.label}
-          </p>
-          <p>
-            <b>Genre:</b> {category.attributes.label}
-          </p>
-          <p>
-            <b>Release Date:</b> {releaseDate.attributes.label}
-          </p>
-          <p>
-            <b>Price:</b> {price.label}
-          </p>
-          <p>
-            <b>Rights:</b> {rights.label}
-          </p>
+          <ul>
+            <li>
+              <b>Album:</b> {name.label}
+            </li>
+            <li>
+              <b>Genre:</b> {category.attributes.label}
+            </li>
+            <li>
+              <b>Release Date:</b> {releaseDate.attributes.label}
+            </li>
+            <li>
+              <b>Price:</b> {price.label}
+            </li>
+            <li>
+              <b>Rights:</b> {rights.label}
+            </li>
+          </ul>
         </div>
       </div>
     </Modal>

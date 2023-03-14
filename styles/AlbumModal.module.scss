@@ -10,5 +10,23 @@
   .media {
     margin-right: var(--sm-spacing);
   }
+
+  .content {
+    ul, li { 
+      margin-left: 0;
+      padding-left: 0;
+      list-style-type: none;
+    }
+    
+    ul {
+      display: flex;
+      flex-direction: column;
+    }
+
+    li{
+      margin: var(--xs-spacing) 0;
+    }
+  
+  }
 }
 
